@@ -1,6 +1,8 @@
 package TaskMenager;
 
 import Utils.Colors;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.commons.validator.GenericValidator;
 
 import java.util.Arrays;
@@ -59,14 +61,50 @@ public class HelperClass {
         return dueDate;
     }
 
-    public static void printArray(String[][] arrayTODO){
+    public static void printArray(String[][] arrayTODO) {
         for (int i = 0; i < arrayTODO.length; i++) {
             System.out.print(i + " : ");
             for (int j = 0; j < arrayTODO[i].length; j++) {
-                System.out.print(arrayTODO[i][j] + " ");
+                if (arrayTODO[i][2].equals("true")) {
+                    System.out.print(Colors.YELLOW + arrayTODO[i][j] + " " + Colors.RESET);
+                } else {
+                    System.out.print(arrayTODO[i][j] + " ");
+                }
             }
             System.out.println();
         }
+    }
+
+    public static String[][] removeTask(String[][] tab, int index) {
+        try {
+            if (index < tab.length) {
+                tab = ArrayUtils.remove(tab, index);
+                return tab;
+            }
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            System.out.println("Element not exist in tab");
+        } finally {
+            return tab;
+        }
+    }
+
+    private static boolean isNumberGreaterEqualZero(String input) {
+        if (NumberUtils.isParsable(input)) {
+            return Integer.parseInt(input) >= 0;
+        }
+        return false;
+    }
+
+    public static int getTheNumber() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please select number to remove.");
+
+        String n = scanner.nextLine();
+        while (!isNumberGreaterEqualZero(n)) {
+            System.out.println("Incorrect argument passed. Please give number greater or equal 0");
+            n = scanner.nextLine();
+        }
+        return Integer.parseInt(n);
     }
 
 
