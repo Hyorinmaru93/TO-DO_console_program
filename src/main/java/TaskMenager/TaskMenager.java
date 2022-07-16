@@ -16,7 +16,15 @@ public class TaskMenager {
             switch (readOption().toLowerCase()) {
                 case "add" -> todoList = addTask(todoList);
 
-                case "remove" -> System.out.println("Usuń");
+                case "remove" -> {
+                    int index = getTheNumber();
+                    if(index < todoList.length) {
+                        todoList = removeTask(todoList, index);
+                        System.out.println("Value was successfully deleted.");
+                    } else {
+                        System.out.println("Value out of range.");
+                    }
+                }
 
                 case "list" -> printArray(todoList);
 
