@@ -1,10 +1,10 @@
-package TaskMenager;
+package TaskManager;
 
-import static TaskMenager.HelperClass.*;
+import static TaskManager.HelperClass.*;
 import static Utils.TaskFile.*;
 import static Utils.Colors.*;
 
-public class TaskMenager {
+public class TaskManager {
     static final String FILE_NAME = "tasks.csv";
     static String[][] todoList;
 

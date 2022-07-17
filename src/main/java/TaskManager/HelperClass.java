@@ -1,4 +1,4 @@
-package TaskMenager;
+package TaskManager;
 
 import Utils.Colors;
 import org.apache.commons.lang3.ArrayUtils;
