@@ -1,8 +1,7 @@
 # TO-DO_console_program
 Simple TO-DO console based program - the task list is written and read from a text file
 ---
-![image](https://icon-library.com/images/java-icon-images/java-icon-images-7.jpg)
-
+![JavaBadge](https://user-images.githubusercontent.com/99723484/182943056-84717921-2182-4b16-a4df-27bf637256cd.png)
 
 ![image](https://img.shields.io/badge/Git-F05032.svg?style=for-the-badge&logo=Git&logoColor=white)
 ![image](https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white)
